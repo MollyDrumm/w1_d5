@@ -58,3 +58,30 @@ def remove_pet_by_name(petshop, name)
   name_of_pet = find_pet_by_name(petshop, name)
   petshop[:pets].delete(name_of_pet)
 end
+
+def add_pet_to_stock(petshop, new_pet)
+  pets_in_petshop = petshop[:pets]
+  new_pets = new_pet
+  total_pets = pets_in_petshop << new_pets
+  return total_pets
+end
+
+def customer_cash(customers)
+  total_cash = customers[:cash]
+  return total_cash
+end
+
+def remove_customer_cash(customer, money)
+  customer_cash = customer[:cash]
+  remove_customer_cash = customer_cash - money
+  customer[:cash] = remove_customer_cash
+end
+
+def customer_pet_count(customers)
+  pet_count = customers[:pets]
+  return pet_count.length
+end
+
+def add_pet_to_customer(customer, new_pets)
+  
+end
