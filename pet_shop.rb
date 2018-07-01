@@ -35,8 +35,26 @@ def stock_count(petshop)
   return counted_stock
 end
 
-def pets_by_breed(petshop, breed_of_pet)
-  petshop_pets = petshop[:pets][:breed]
+def pets_by_breed(petshop, breed)
+  breed_of_pet = []
+  for pet in petshop[:pets]
+    if pet[:breed] == breed
+      breed_of_pet << pet
+    end
+  end
+  return breed_of_pet
+end
 
-  return 
+def find_pet_by_name(petshop, name)
+  for pet in petshop[:pets]
+    if pet[:name] == name
+      return pet
+    end
+  end
+  return nil
+end
+
+def remove_pet_by_name(petshop, name)
+  name_of_pet = find_pet_by_name(petshop, name)
+  petshop[:pets].delete(name_of_pet)
 end
